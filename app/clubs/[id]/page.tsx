@@ -25,6 +25,21 @@ const POSTS = [
   },
   {
     id: 1,
+    club: "Faculty Sports",
+    clubId: "faculty",
+    department: "Faculty",
+    author: "Dr. Ujjwal Biswas",
+    avatar:
+      "https://ui-avatars.com/api/?name=Ujjwal+Biswas&background=FA8112&color=FAF3E1",
+    content:
+      "🏏 Thanks to all members for these wonderful moments! Inter-NIT Faculty Cricket Tournament was a huge success.",
+    image: "/cricket_tournament.jpg",
+    timestamp: "2 hours ago",
+    likes: 312,
+    comments: 67,
+  },
+  {
+    id: 2,
     club: "Electrical Engineering",
     clubId: "electrical",
     department: "EE",
@@ -35,24 +50,9 @@ const POSTS = [
       "⚡ Proud to organize the **Power Electronics Workshop** for our students! An intensive hands-on session covering inverters, converters, and renewable energy systems.",
     image:
       "https://images.unsplash.com/photo-1581092921461-eab62e97a780?q=80&w=2070&auto=format&fit=crop",
-    timestamp: "2 hours ago",
+    timestamp: "3 hours ago",
     likes: 234,
     comments: 45,
-  },
-  {
-    id: 2,
-    club: "Faculty Sports",
-    clubId: "faculty",
-    department: "Faculty",
-    author: "Dr. Ujjwal Biswas",
-    avatar:
-      "https://ui-avatars.com/api/?name=Ujjwal+Biswas&background=FA8112&color=FAF3E1",
-    content:
-      "🏏 Thanks to all members for these wonderful moments! Inter-NIT Faculty Cricket Tournament was a huge success.",
-    image: "/ujjwal_biswas_cricket.png",
-    timestamp: "3 hours ago",
-    likes: 312,
-    comments: 67,
   },
   {
     id: 3,
