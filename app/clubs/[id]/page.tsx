@@ -158,20 +158,34 @@ export default async function ClubPage({
   const clubPosts = POSTS.filter((post) => post.clubId === id);
 
   return (
-    <div className="min-h-screen pb-20">
+    <div className="min-h-screen pb-20 bg-background">
       {/* Hero Header */}
-      <div className="relative h-[40vh] w-full overflow-hidden">
+      <div className="relative h-[45vh] w-full overflow-hidden">
         <img
           src={club.heroImage}
           alt={club.name}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-linear-to-t from-background via-background/40 to-transparent" />
-        <div className="absolute bottom-0 left-0 p-8 container mx-auto max-w-5xl">
-          <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">
-            {club.name}
-          </h1>
-          <p className="text-xl text-white/80 max-w-2xl">{club.description}</p>
+        {/* Dark overlay for text readability */}
+        <div className="absolute inset-0 bg-linear-to-t from-[#222222] via-[#222222]/70 to-[#222222]/30" />
+        <div className="absolute bottom-0 left-0 right-0 p-8">
+          <div className="container mx-auto max-w-5xl">
+            <h1
+              className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-3"
+              style={{ textShadow: "0 2px 8px rgba(0,0,0,0.5)" }}
+            >
+              {club.name}
+            </h1>
+            <p
+              className="text-xl text-white/90 max-w-2xl"
+              style={{ textShadow: "0 1px 4px rgba(0,0,0,0.5)" }}
+            >
+              {club.description}
+            </p>
+            <span className="mt-4 inline-block rounded-full bg-primary px-4 py-1 text-sm font-semibold text-primary-foreground">
+              {club.department}
+            </span>
+          </div>
         </div>
       </div>
 

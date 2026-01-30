@@ -37,8 +37,8 @@ export const CLUBS: Club[] = [
       { name: "Ankit Sharma", role: "President", phone: "0987654321" },
     ],
     contributions: [
-      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070",
-      "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2031",
+      "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1587620962725-abab7fe55159?q=80&w=2031&auto=format&fit=crop",
     ],
     department: "CSE",
   },
@@ -48,7 +48,7 @@ export const CLUBS: Club[] = [
     description: "Capturing moments, creating memories. The lens is our eye.",
     logo: "/icons/camera.svg",
     heroImage:
-      "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?q=80&w=1974",
+      "https://images.unsplash.com/photo-1452587925148-ce544e77e70d?q=80&w=1974&auto=format&fit=crop",
     history:
       "Since 2014, the Photography Club has been capturing the essence of campus life. Our members have won national-level competitions and our work has been featured in various publications.",
     mentors: [
@@ -59,8 +59,8 @@ export const CLUBS: Club[] = [
       },
     ],
     contributions: [
-      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070",
-      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=2000",
+      "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1516035069371-29a1b244cc32?q=80&w=2000&auto=format&fit=crop",
     ],
     department: "All Departments",
   },
@@ -70,14 +70,14 @@ export const CLUBS: Club[] = [
     description: "Innovate, Pitch, Succeed. Building the leaders of tomorrow.",
     logo: "/icons/rocket.svg",
     heroImage:
-      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070",
+      "https://images.unsplash.com/photo-1519389950473-47ba0277781c?q=80&w=2070&auto=format&fit=crop",
     history:
       "Starting small, dreaming big. Since 2016, we've incubated over 20 student startups and hosted pitch competitions with industry leaders.",
     mentors: [
       { name: "Dr. Vikram Patel", role: "Director", phone: "5544332211" },
     ],
     contributions: [
-      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032",
+      "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=2032&auto=format&fit=crop",
     ],
     department: "All Departments",
   },
@@ -87,14 +87,15 @@ export const CLUBS: Club[] = [
     description: "Voice of the Soul. Harmonizing hearts through melody.",
     logo: "/icons/music.svg",
     heroImage:
-      "https://images.unsplash.com/photo-1516280440614-6697288d5d38?q=80&w=2070",
+      "https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?q=80&w=2070&auto=format&fit=crop",
     history:
       "Bringing vocal talents together since 2017. Our choir has performed at state-level events and cultural festivals across the Northeast.",
     mentors: [
       { name: "Ms. Priya Devi", role: "Vocal Lead", phone: "9988776655" },
     ],
     contributions: [
-      "https://images.unsplash.com/photo-1507838153414-b4b713384ebd?q=80&w=2070",
+      "https://images.unsplash.com/photo-1514320291840-2e0a9bf2a9ae?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?q=80&w=2070&auto=format&fit=crop",
     ],
     department: "All Departments",
   },
@@ -104,7 +105,7 @@ export const CLUBS: Club[] = [
     description: "Rhythm in Motion. Expressing life through dance.",
     logo: "/icons/dance.svg",
     heroImage:
-      "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=2070",
+      "https://images.unsplash.com/photo-1504609813442-a8924e83f76e?q=80&w=2070&auto=format&fit=crop",
     history:
       "Dance your heart out! Established in 2018, we specialize in contemporary, classical, and folk dance forms of the Northeast.",
     mentors: [
@@ -115,7 +116,8 @@ export const CLUBS: Club[] = [
       },
     ],
     contributions: [
-      "https://images.unsplash.com/photo-1518834107812-cf67135de99f?q=80&w=2070",
+      "https://images.unsplash.com/photo-1508700929628-666bc8bd84ea?q=80&w=2070&auto=format&fit=crop",
+      "https://images.unsplash.com/photo-1547153760-18fc86324498?q=80&w=2070&auto=format&fit=crop",
     ],
     department: "All Departments",
   },
