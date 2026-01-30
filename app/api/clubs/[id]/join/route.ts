@@ -1,53 +1,34 @@
 import { NextRequest, NextResponse } from "next/server";
-import db from "@/lib/db";
-
-// Using the newer Next.js patterns where params is async not strictly needed in API routes yet for this version?
-// In 16.1.6, API route params in second argument are standard.
-// params: { id: string }
+import { db } from "@/lib/db";
 
 export async function POST(
-  req: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  try {
-    const { id } = await params;
-    const { email } = await req.json();
+  const { id: clubId } = await params;
+  const { email } = await request.json();
 
-    if (!email || !id) {
-      return NextResponse.json({ error: "Missing fields" }, { status: 400 });
-    }
-
-    const stmt = db.prepare(`
-        INSERT INTO memberships (user_email, club_id) VALUES ($email, $id)
-        ON CONFLICT DO NOTHING
-    `);
-    stmt.run({ $email: email, $id: id });
-
-    return NextResponse.json({ success: true, joined: true });
-  } catch (err) {
-    return NextResponse.json({ error: "DB Error" }, { status: 500 });
+  if (!email) {
+    return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   }
+
+  db.joinClub(email, clubId);
+
+  return NextResponse.json({ success: true });
 }
 
 export async function DELETE(
-  req: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ id: string }> },
 ) {
-  try {
-    const { id } = await params;
-    const { email } = await req.json();
+  const { id: clubId } = await params;
+  const { email } = await request.json();
 
-    if (!email || !id) {
-      return NextResponse.json({ error: "Missing fields" }, { status: 400 });
-    }
-
-    const stmt = db.prepare(
-      `DELETE FROM memberships WHERE user_email = $email AND club_id = $id`,
-    );
-    stmt.run({ $email: email, $id: id });
-
-    return NextResponse.json({ success: true, joined: false });
-  } catch (err) {
-    return NextResponse.json({ error: "DB Error" }, { status: 500 });
+  if (!email) {
+    return NextResponse.json({ error: "Not authenticated" }, { status: 401 });
   }
+
+  db.leaveClub(email, clubId);
+
+  return NextResponse.json({ success: true });
 }

@@ -20,7 +20,7 @@
   --muted: #ebe0c0; /* Slightly darker than card */
   --muted-foreground: #555555;
 
-  --accent: #fa8112; /* Reuse primary for strong accent or lighten it */
+  --accent: #fa8112;
   --accent-foreground: #faf3e1;
 
   --destructive: #ef4444;
@@ -30,17 +30,13 @@
   --input: #e0cfa0;
   --ring: #fa8112;
   --radius: 0.5rem;
-}
 
-/* Force Light Mode (no dark mode overrides that change the feel significantly, 
-   or just map dark mode to same warm dark theme if requested? 
-   User said "keep primary as light, no dark mode". 
-   So I will simply NOT provide different values for dark media query, 
-   or explicitly override `dark` class to use same values. */
+  --font-sans: var(--font-google-sans), system-ui, sans-serif;
+}
 
 @media (prefers-color-scheme: dark) {
   :root {
-    /* Identical to light mode to force the theme */
+    /* Force light mode - same values */
     --background: #faf3e1;
     --foreground: #222222;
     --card: #f5e7c6;
@@ -66,12 +62,16 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
   @apply antialiased;
 }
 
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
   }
 }

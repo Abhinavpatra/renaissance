@@ -72,10 +72,10 @@ export function Navbar() {
               Explore
             </Link>
             <Link
-              href="/#contact"
+              href="/sessions"
               className="text-sm font-medium hover:text-primary transition-colors"
             >
-              Contact
+              Sessions
             </Link>
 
             {/* Search in Navbar - Visible when scrolled or always? User said "Explore search part within navbar" */}
@@ -143,11 +143,11 @@ export function Navbar() {
                 Explore
               </Link>
               <Link
-                href="/#contact"
+                href="/sessions"
                 onClick={() => setIsMobileMenuOpen(false)}
                 className="py-2 hover:text-primary"
               >
-                Contact
+                Sessions
               </Link>
               {user ? (
                 <Link
