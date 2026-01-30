@@ -31,8 +31,13 @@ export function ClubCard({ club }: { club: Club }) {
           <p className="text-sm text-muted-foreground line-clamp-2">
             {club.description}
           </p>
-          <div className="mt-4 flex items-center gap-2 text-xs font-semibold text-primary uppercase tracking-wider">
-            View Details &rarr;
+          <div className="mt-4 flex items-center justify-between">
+            <span className="rounded-full bg-primary/10 px-3 py-1 text-xs font-medium text-primary">
+              {club.department}
+            </span>
+            <span className="text-xs font-semibold text-primary uppercase tracking-wider">
+              View Details &rarr;
+            </span>
           </div>
         </div>
       </div>

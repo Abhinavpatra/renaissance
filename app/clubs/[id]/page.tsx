@@ -3,14 +3,8 @@ import { notFound } from "next/navigation";
 import { MentorList } from "@/components/features/mentor-list";
 import { Gallery } from "@/components/features/gallery";
 import { Users } from "lucide-react";
-
-// In Next.js App Router, params is a Promise in newer versions or sync in older.
-// The user has Next.js 16.1.6 (from package.json view).
-// In Next.js 15+, params is async. Next.js 16 (if it exists, likely the user meant 15, or it's a very new/canary version).
-// Wait, package.json said "next": "16.1.6"?
-// Next.js 16 is not released yet (as of early 2025 knowledge, current is 15).
-// Maybe it's 15.1.6. I will assume standard Next 15 async params patterns just to be safe.
-// If it errors, I'll fix it.
+import { JoinButton } from "@/components/features/join-button";
+import Link from "next/link";
 
 export async function generateStaticParams() {
   return CLUBS.map((club) => ({
@@ -39,7 +33,7 @@ export default async function ClubPage({
           alt={club.name}
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-background via-background/40 to-transparent" />
+        <div className="absolute inset-0 bg-linear-to-t from-background via-background/40 to-transparent" />
         <div className="absolute bottom-0 left-0 p-8 container mx-auto max-w-5xl">
           <h1 className="text-4xl md:text-6xl font-bold tracking-tight text-white mb-2">
             {club.name}
@@ -64,11 +58,17 @@ export default async function ClubPage({
             <p className="text-muted-foreground">
               Connect with other members in the {club.name} group chat.
             </p>
+            <div className="mt-4">
+              <JoinButton clubId={club.id} />
+            </div>
           </div>
-          <button className="flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-lg transition-transform hover:scale-105 hover:bg-primary/90">
+          <Link
+            href={`/clubs/${club.id}/chat`}
+            className="flex items-center gap-2 rounded-full bg-primary px-6 py-3 font-semibold text-primary-foreground shadow-lg transition-transform hover:scale-105 hover:bg-primary/90"
+          >
             <Users className="h-5 w-5" />
             Open Group Chat
-          </button>
+          </Link>
         </section>
 
         {/* Mentors */}

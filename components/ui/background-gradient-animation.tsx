@@ -47,7 +47,7 @@ export const BackgroundGradientAnimation = ({
       }}
     >
       {/* Simplified static gradient fallback for performance/simplicity in this demo */}
-      <div className="absolute inset-0 bg-gradient-to-tr from-indigo-500/30 via-purple-500/30 to-blue-500/30 animate-pulse pointer-events-none" />
+      <div className="absolute inset-0 bg-linear-to-tr from-[#FA8112]/20 via-[#F5E7C6]/30 to-[#FAF3E1]/40 animate-pulse pointer-events-none" />
       <div className={cn("relative z-10", className)}>{children}</div>
     </div>
   );

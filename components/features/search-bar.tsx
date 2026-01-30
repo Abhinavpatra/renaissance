@@ -33,13 +33,10 @@ export function SearchBar() {
     <>
       <button
         onClick={() => setIsOpen(true)}
-        className="group relative flex w-full max-w-sm items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-sm text-muted-foreground transition-all hover:bg-white/10 hover:text-foreground"
+        className="group relative flex w-full max-w-[200px] items-center gap-2 rounded-full border border-input bg-background/50 px-4 py-2 text-sm text-muted-foreground transition-all hover:bg-background hover:text-foreground"
       >
         <Search className="h-4 w-4" />
-        <span>Search clubs...</span>
-        <kbd className="pointer-events-none absolute right-3 hidden h-5 select-none items-center gap-1 rounded border border-white/10 bg-white/5 px-1.5 font-mono text-[10px] font-medium opacity-100 sm:flex">
-          <span className="text-xs">⌘</span>K
-        </kbd>
+        <span className="hidden sm:inline">Search...</span>
       </button>
 
       <AnimatePresence>

@@ -1,49 +1,65 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #020817;
-  --card: #ffffff;
-  --card-foreground: #020817;
-  --popover: #ffffff;
-  --popover-foreground: #020817;
-  --primary: #2563eb;
-  --primary-foreground: #f8fafc;
-  --secondary: #f1f5f9;
-  --secondary-foreground: #0f172a;
-  --muted: #f1f5f9;
-  --muted-foreground: #64748b;
-  --accent: #f1f5f9;
-  --accent-foreground: #0f172a;
+  /* Warm Palette: #FAF3E1, #F5E7C6, #FA8112, #222222 */
+  --background: #faf3e1; /* Primary Light */
+  --foreground: #222222; /* Text */
+
+  --card: #f5e7c6; /* Secondary Light/Card */
+  --card-foreground: #222222;
+
+  --popover: #faf3e1;
+  --popover-foreground: #222222;
+
+  --primary: #fa8112; /* Orange Accent */
+  --primary-foreground: #faf3e1;
+
+  --secondary: #f5e7c6;
+  --secondary-foreground: #222222;
+
+  --muted: #ebe0c0; /* Slightly darker than card */
+  --muted-foreground: #555555;
+
+  --accent: #fa8112; /* Reuse primary for strong accent or lighten it */
+  --accent-foreground: #faf3e1;
+
   --destructive: #ef4444;
-  --destructive-foreground: #f8fafc;
-  --border: #e2e8f0;
-  --input: #e2e8f0;
-  --ring: #2563eb;
+  --destructive-foreground: #faf3e1;
+
+  --border: #e0cfa0;
+  --input: #e0cfa0;
+  --ring: #fa8112;
   --radius: 0.5rem;
 }
 
+/* Force Light Mode (no dark mode overrides that change the feel significantly, 
+   or just map dark mode to same warm dark theme if requested? 
+   User said "keep primary as light, no dark mode". 
+   So I will simply NOT provide different values for dark media query, 
+   or explicitly override `dark` class to use same values. */
+
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #020617; /* Deep bluish black */
-    --foreground: #f8fafc;
-    --card: #0f172a; /* Slate 900 */
-    --card-foreground: #f8fafc;
-    --popover: #0f172a;
-    --popover-foreground: #f8fafc;
-    --primary: #3b82f6; /* Blue 500 */
-    --primary-foreground: #0f172a;
-    --secondary: #1e293b; /* Slate 800 */
-    --secondary-foreground: #f8fafc;
-    --muted: #1e293b;
-    --muted-foreground: #94a3b8;
-    --accent: #1e293b;
-    --accent-foreground: #f8fafc;
-    --destructive: #7f1d1d;
-    --destructive-foreground: #f8fafc;
-    --border: #1e293b;
-    --input: #1e293b;
-    --ring: #1d4ed8;
+    /* Identical to light mode to force the theme */
+    --background: #faf3e1;
+    --foreground: #222222;
+    --card: #f5e7c6;
+    --card-foreground: #222222;
+    --popover: #faf3e1;
+    --popover-foreground: #222222;
+    --primary: #fa8112;
+    --primary-foreground: #faf3e1;
+    --secondary: #f5e7c6;
+    --secondary-foreground: #222222;
+    --muted: #ebe0c0;
+    --muted-foreground: #555555;
+    --accent: #fa8112;
+    --accent-foreground: #faf3e1;
+    --destructive: #ef4444;
+    --destructive-foreground: #faf3e1;
+    --border: #e0cfa0;
+    --input: #e0cfa0;
+    --ring: #fa8112;
   }
 }
 
