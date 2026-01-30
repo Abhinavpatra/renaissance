@@ -14,18 +14,37 @@ export function Navbar() {
   );
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
+  // Check for user in localStorage
+  const checkUser = () => {
+    const stored = localStorage.getItem("user");
+    if (stored) {
+      setUser(JSON.parse(stored));
+    } else {
+      setUser(null);
+    }
+  };
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 50);
     };
     window.addEventListener("scroll", handleScroll);
 
-    const stored = localStorage.getItem("user");
-    if (stored) {
-      setUser(JSON.parse(stored));
-    }
+    // Initial check
+    checkUser();
 
-    return () => window.removeEventListener("scroll", handleScroll);
+    // Listen for storage changes (login/logout from other tabs)
+    const handleStorage = () => checkUser();
+    window.addEventListener("storage", handleStorage);
+
+    // Also check on focus (when user comes back to tab after login)
+    window.addEventListener("focus", checkUser);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("storage", handleStorage);
+      window.removeEventListener("focus", checkUser);
+    };
   }, []);
 
   return (

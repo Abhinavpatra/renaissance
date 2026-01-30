@@ -20,6 +20,8 @@ export default function LoginPage() {
       "user",
       JSON.stringify({ email, name: email.split("@")[0] }),
     );
+    // Dispatch storage event to update navbar in same tab
+    window.dispatchEvent(new Event("storage"));
     router.push("/");
   };
 
